@@ -19,7 +19,7 @@ fi
 
 ## launch vpn
 if ls /etc/wireguard/*.conf; then
-	_IF=`/bin/ls /etc/wireguard/*.conf | sort | head -n 1`
+	_IF=`/bin/ls /etc/wireguard/*.conf | shuf | head -n 1`
         resolvconf -u
 	wg-quick up ${_IF}
 fi
